@@ -107,3 +107,43 @@ function forclear() {
   }
 
 
+  var select = document.querySelectorAll('.Currency');
+  var input_currency = document.getElementById('input_currency');
+  var output_currency = document.getElementById('output_currency');
+   
+   
+  function convert(from, to, amount) {
+      fetch(`https://api.frankfurter.app/latest?base=${from}&symbols=${to}`)
+        .then((resp) => resp.json())
+        .then((data) => {
+          const convertedAmount = (amount * data.rates[to]).toFixed(2);
+          alert(`${amount} ${from} = ${convertedAmount} ${to}`);
+        });
+      }
+   
+  const host = 'api.frankfurter.app/currencies';
+  fetch(`https://${host}`)
+      .then((data) => data.json())
+      .then((data) => {
+          const entries = Object.entries(data);
+          console.log(entries)
+          for(i = 0; i < entries.length; i++){
+            select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+            select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+          }
+      });
+  function converter(){
+    var input_currency_val = input_currency.value;
+      if(select[0].value != select[1].value){
+       
+        const host = 'api.frankfurter.app';
+        fetch(`https://${host}/latest?amount=${input_currency_val}&from${select[0].value}&to=${select[1].value}`)
+            .then((val) => val.json())
+            .then((val) => {
+              output_currency.value = Object.values(val.rates)[0]
+       
+      });
+      }else{
+        alert("Please select two diffrent currency")
+      }
+    }

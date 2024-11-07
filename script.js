@@ -7,6 +7,8 @@ function forclear() {
     document.getElementById("output").innerHTML = "0";
     document.getElementById("p1").innerHTML = "";
     document.getElementById("game").style.display = "none"; // Masquer les images au début
+    countEssaie = 5;
+    count.innerText = countEssaie;
   }
   
   function removeZero() {
@@ -126,10 +128,10 @@ function forclear() {
       .then((data) => data.json())
       .then((data) => {
           const entries = Object.entries(data);
-          console.log(entries)
+
           for(i = 0; i < entries.length; i++){
-            select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
-            select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+            select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][1]}</option>`;
+            select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][1]}</option>`;
           }
       });
   function converter(){

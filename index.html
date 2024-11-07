@@ -18,15 +18,15 @@
     </nav>
   </header>
   
-  <strong><h1 style="margin-top: 100px;margin-left: auto;margin-right: auto;display: flex;justify-content: center;">Calculer et voyager par altitude</h1></strong>
-  <div id="home" style="grid-template-columns: repeat(2, 1fr);display: grid;" class="container">
+  <strong><h1 class="mt-100 mx-auto d-flex j-center bg-black text-shadow radius box-shadow c-white w-fit-content px-20 py-10">Calculer et voyager par altitude</h1></strong>
+  <div id="home">
 
     <div>
-      <h1 style="display: flex; justify-content: center;">Historique</h1>
+      <h1 class="d-flex j-center">Historique</h1>
       <p id="p1" style="border: 2px solid black;width: 400px;height: 400px; margin-right: auto; margin-left: auto;">
       </p>
     </div>
-    <div class="container">
+    <div>
       <div class="div">
         <p id="output" class="display">0</p>
 
@@ -89,13 +89,13 @@
         <select name="" id="" class="Currency">
           <option>Select</option>
         </select>
-        <input type="text" id="input_currency" name="">
+        <input type="number" id="input_currency" name="">
       </div>
       <div class="col">
         <select name="" id="" class="Currency">
           <option>Select</option>
         </select>
-        <input type="text" id="output_currency" disabled name="">
+        <input type="number" id="output_currency" disabled name="">
       </div>
     </div>
     <button onclick="converter()">Convert</button>

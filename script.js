@@ -6,6 +6,9 @@ let game = document.getElementById("game");
 var somme = 145;
 var countEssaie = 5;
 count.innerText = 5;
+function showGameExplanation() {
+  alert("Bienvenue dans notre jeu !\n\nBut : Résolvez des calculs et découvrez des destinations cachées en fonction du résultat.\n\nExplication : Utilisez la calculatrice pour obtenir un nombre. Selon la plage de ce nombre, une image représentant une destination sera affichée. Attention, vous avez un nombre d'essais limité !");
+}
 function forclear() {
   output.innerHTML = "0";
   p1.innerHTML = "";

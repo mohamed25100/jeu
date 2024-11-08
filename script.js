@@ -97,6 +97,9 @@ function forclear() {
   function solve() {
     removeZero();
     try {
+      if (document.getElementById("output").innerHTML == "") {
+        document.getElementById("output").innerHTML = 0;
+      }
       window.location.href = '#game';
       var equation = document.getElementById("output").innerHTML;
       var solved = eval(equation);
